@@ -1,0 +1,22 @@
+environments:
+  dev:
+    values:
+      - environments/global.yaml
+      - environments/dev.yaml
+  prod:
+    values:
+      - environments/global.yaml
+      - environments/prod.yaml
+---
+repositories:
+  - name: ""
+    url: "https://"
+
+releases:
+  - name: ""
+    namespace: {{ .Values.projectName }}-{{ .Values.environment }} 
+    chart: ""
+    version: ""  # Optional: specify a chart version
+    values:
+      - replicaCount: 1  # Default is 3, can be adjusted here
+      # Add other values here to customize the deployment if needed
